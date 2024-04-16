@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website - Rahul Yadav</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
@@ -20,10 +21,24 @@
                 </div>
                 
                 <div class="nav-items">
-                    <div><a href="#projects">Projects</a></div>
-                    <div><a href="#skills">Skills</a></div>
-                    <div><a href="#contactme">Contact Me</a></div>
+                    <div class="hideOnMobile"><a href="#projects">Projects</a></div>
+                    <div class="hideOnMobile"><a href="#skills">Skills</a></div>
+                    <div class="hideOnMobile"><a href="#contactme">Contact Me</a></div>
+                  <div onclick=showSidebar() class="menuButton"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></div>
+
                 </div>
+
+                <div class="sidebar">
+                  <div class="logo-container logoo">
+                    <img src="./images/userAsset/NavLogo3.png" class="logo">
+                    <div class="logo-text">ahul Yadav</div>
+                </div>
+                  
+                  <div><a href="#projects">Projects</a></div>
+                  <div><a href="#skills">Skills</a></div>
+                  <div><a href="#contactme">Contact Me</a></div>
+                  <div onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></div>
+              </div>
 
             </div>
 
@@ -352,6 +367,16 @@
       backSpeed: 80,
       backDelay: 1000,
     });
+
+    function showSidebar(){
+      const sidebar = document.querySelector(".sidebar");
+      sidebar.style.display = 'flex';
+    }
+
+    function hideSidebar(){
+      const sidebar = document.querySelector(".sidebar");
+      sidebar.style.display = 'none';
+    }
   </script>
 </body>
 </html>
